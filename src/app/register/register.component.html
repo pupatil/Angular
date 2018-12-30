@@ -1,0 +1,79 @@
+<div class="container-fluid">
+
+  <form [formGroup]="reg" (ngSubmit)="Reg(reg.value)" class="form col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+        </span>
+        <input class="form-control" [formControl]="reg.controls['name']" placeholder="Name" name="name">
+      </div>
+      <div *ngIf="reg.controls['name'].hasError('required') && (reg.controls['name'].touched || 
+      reg.controls['name'].dirty)" class="alert alert-danger">
+        This field is required
+      </div>
+      <div *ngIf="reg.controls['name'].hasError('pattern') && (reg.controls['name'].touched || 
+      reg.controls['name'].dirty)" class="alert alert-danger">
+        Invalid Name
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-envelope"></span>
+        </span>
+        <input type="email" class="form-control" [formControl]="reg.controls['email']" placeholder="Email" 
+        name="email">
+      </div>
+      <div *ngIf="reg.controls['email'].hasError('required') && (reg.controls['email'].touched 
+      || reg.controls['email'].dirty)" class="alert alert-danger">
+        This field is required
+      </div>
+      <div *ngIf="reg.controls['email'].hasError('pattern') && (reg.controls['email'].touched 
+      || reg.controls['email'].dirty)" class="alert alert-danger">
+        Invalid Email
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-phone"></span>
+        </span>
+        <input class="form-control" [formControl]="reg.controls['mobile']" placeholder="Mobile" name="mobile">
+      </div>
+      <div *ngIf="reg.controls['mobile'].hasError('required') && (reg.controls['mobile'].touched ||
+       reg.controls['mobile'].dirty)" class="alert alert-danger">
+        This field is required
+      </div>
+      <div *ngIf="reg.controls['mobile'].hasError('pattern') && (reg.controls['mobile'].touched ||
+       reg.controls['mobile'].dirty)" class="alert alert-danger">
+        Invalid Mobile Number
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="input-group">
+        <input type="password" class="form-control" [formControl]="reg.controls['password']"
+         placeholder="Password" name="password">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-eye-close"></span>
+        </span>
+      </div>
+      <div *ngIf="reg.controls['password'].hasError('required') && (reg.controls['password'].touched ||
+       reg.controls['password'].dirty)" class="alert alert-danger">
+        This field is required
+      </div>
+      <div *ngIf="reg.controls['password'].hasError('pattern') && (reg.controls['password'].touched ||
+       reg.controls['password'].dirty)" class="alert alert-danger">
+        Invalid Password
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="reset" class="btn btn-danger pull-left">Reset</button>
+      <button type="submit" class="btn btn-success pull-right">Register</button>
+    </div>
+  </form>
+</div>

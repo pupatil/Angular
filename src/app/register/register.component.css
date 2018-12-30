@@ -1,0 +1,9 @@
+.form{
+    border: 3px double silver;
+    box-shadow: 10px 10px 10px rgb(63, 63, 63);
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: calc(10vh);
+    margin-bottom: calc(10vh);
+    background-color: #7974744d  !important;
+}
